@@ -3,5 +3,20 @@
     import Navbar from "./Navbar.svelte";
 </script>
 
-<Logo />
-<Navbar />
+<div>
+    <Logo />
+    <Navbar />
+</div>
+
+<style>
+    div {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-between;
+        align-self: stretch;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+</style>

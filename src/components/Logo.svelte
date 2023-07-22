@@ -1,5 +1,5 @@
 <script>
-    let src="public/logo.svg"
+    let src="/logo.svg"
     let alt="Moa pizza logo"
 </script>
 
@@ -13,6 +13,7 @@
 
 
 <style>
+
     section {
         display: flex;
         align-items: center;
@@ -41,7 +42,7 @@
         color: #000;
 
         /* logo-main */
-        font-family: Roboto;
+        font-family: "Roboto", sans-serif;
         font-size: 2.25rem;
         font-style: normal;
         font-weight: 700;
@@ -54,7 +55,7 @@
         color: #000;
 
         /* bigger-subtext */
-        font-family: Roboto;
+        font-family: "Roboto", sans-serif;
         font-size: 1.5rem;
         font-style: normal;
         font-weight: 300;
