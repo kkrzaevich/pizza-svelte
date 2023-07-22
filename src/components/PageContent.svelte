@@ -1,15 +1,17 @@
 <script>
-    import Header from "./Header.svelte";
-    import Menu from "./Menu.svelte";
+    import Header from "./Header/Header.svelte";
+    import Menu from "./Menu/Menu.svelte";
     import Footer from "./Footer.svelte";
 </script>
 
-<Header />
-<Menu />
-<Footer />
+<div>
+    <Header />
+    <Menu />
+    <Footer />
+</div>
 
 <style>
-    body {
+    div {
         display: flex;
         min-width: 28.75rem;
         flex-direction: column;

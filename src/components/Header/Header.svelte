@@ -1,6 +1,6 @@
 <script>
-    import Logo from "./Logo.svelte";
     import Navbar from "./Navbar.svelte";
+    import Logo from "./Logo.svelte";
 </script>
 
 <div>
