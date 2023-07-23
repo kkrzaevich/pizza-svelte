@@ -1,16 +1,18 @@
 <script>
     export let name = "Пицца";
-    export let src = "/product-type1.svg";
+    export let src = "/product-type1.jpg";
     export let alt = "Пицца";
 </script>
 
-<section>
-    <img {src} {alt}>
+<a>
+    <div class="outer" style="background-image: url('{src}'); background-size: cover; background-repeat: no-repeat; background-color: black">
+        <div class="inner" ></div>
+    </div>
     <p>{name}</p>
-</section>
+</a>
 
 <style>
-    section {
+    a {
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
@@ -18,13 +20,20 @@
         gap: 0.625rem;
     }
 
-    img {
+    .inner {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 0.625rem;
+    }
+
+    .outer {
         width: 7.5rem;
         height: 7.5rem;
 
+        display: block;
         border-radius: 0.625rem;
         border: 2px solid var(--900, #000);
-        background: url(<path-to-image>), lightgray 50% / cover no-repeat, var(--900, #000);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
@@ -36,5 +45,13 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    a:hover > .outer > .inner {
+        background-color: rgba(0, 0, 0, 0); 
+    }
+
+    a:hover p {
+        font-weight: 700;
     }
 </style>
