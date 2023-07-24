@@ -1,18 +1,28 @@
 <script>
     import ProductType from "./ProductType.svelte";
-    let product1 = "Пицца";
-    let product2 = "Напитки";    
-    let product3 = "Закуски";
-    let src1 = "./product-type1.jpg";
-    let src2 = "./product-type2.jpg";
-    let src3 = "./product-type3.jpg";    
+    let product1 = {
+        name: "Пицца",
+        src: "./product-type1.jpg",
+        href: "#pizza",
+    }
+    let product2 = {
+        name: "Напитки",
+        src: "./product-type2.jpg",
+        href: "#drinks",
+    }
+    let product3 = {
+        name: "Закуски",
+        src: "./product-type3.jpg",
+        href: "#snacks",
+    }
+  
 </script>
 
 <section>
     <div>
-        <ProductType name={product1} src={src1} alt={product1}/>
-        <ProductType name={product2} src={src2} alt={product2}/>
-        <ProductType name={product3} src={src3} alt={product3}/>
+        <ProductType name={product1.name} src={product1.src} href={product1.href}/>
+        <ProductType name={product2.name} src={product2.src} href={product2.href}/>
+        <ProductType name={product3.name} src={product3.src} href={product3.href}/>
     </div>
 </section>
 

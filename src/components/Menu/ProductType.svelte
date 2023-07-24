@@ -1,10 +1,10 @@
 <script>
     export let name = "Пицца";
     export let src = "/product-type1.jpg";
-    export let alt = "Пицца";
+    export let href = "#pizza";
 </script>
 
-<a>
+<a {href}>
     <div class="outer" style="background-image: url('{src}'); background-size: cover; background-repeat: no-repeat; background-color: black">
         <div class="inner" ></div>
     </div>
