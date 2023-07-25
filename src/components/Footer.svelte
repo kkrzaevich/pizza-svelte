@@ -18,7 +18,8 @@
 
 <style>
     hr {
-        border: 2px solid #E4A5FF;
+        border: 0.5px solid #E4A5FF;
+        width: 100%;
     }
 
     img {
