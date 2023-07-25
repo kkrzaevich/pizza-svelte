@@ -10,9 +10,9 @@
 </script>
 
 <div>
-    <MenuSection id="#pizza" sectionName={"Пицца"} menuItems={pizzaList}/>
-    <MenuSection id="#drinks" sectionName={"Напитки"} menuItems={drinkList}/>
-    <MenuSection id="#snacks" sectionName={"Закуски"} menuItems={snackList}/>
+    <MenuSection id="pizza" sectionName={"Пицца"} menuItems={pizzaList}/>
+    <MenuSection id="drinks" sectionName={"Напитки"} menuItems={drinkList}/>
+    <MenuSection id="snacks" sectionName={"Закуски"} menuItems={snackList}/>
 </div>
 
 <style>

@@ -1,5 +1,5 @@
 <script>
-    export let id="#id";
+    export let id="id";
     export let sectionName="Пицца";
     export let menuItems=[];
 

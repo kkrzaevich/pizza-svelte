@@ -1,7 +1,7 @@
 <script>
     export let name = "Пицца";
     export let src = "/product-type1.jpg";
-    export let href = "#pizza";
+    export let href;
 </script>
 
 <a {href}>
