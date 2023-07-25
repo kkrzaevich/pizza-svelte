@@ -5,9 +5,10 @@
 </script>
 
 <section>
-    <div class="image" style="background-image: url('{src}'); background-size: cover; background-repeat: no-repeat; background-color: transparent">
-        <div class="shadow-box"></div>
+    <div class="img-container">
+        <img {src} alt={heading}>
     </div>
+
     <div class="description">
         <h1>{heading}</h1>
         <p>{description}</p>
@@ -16,6 +17,19 @@
 </section>
 
 <style>
+    .img-container {
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        max-width: 150px;
+        max-height: 150px;
+        filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.25));
+    }
+
     section {
         display: inline-flex;
         height: 15.0625rem;
