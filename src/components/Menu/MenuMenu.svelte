@@ -3,10 +3,16 @@
 
     import MenuItem from "./MenuItem.svelte";
     import Menu from "./Menu.svelte";
+
+    import { pizzaList } from "./ItemsList";
+    import { drinkList } from "./ItemsList";
+    import { snackList } from "./ItemsList";
 </script>
 
 <div>
-    <MenuSection id="#pizza"/>
+    <MenuSection id="#pizza" sectionName={"Пицца"} menuItems={pizzaList}/>
+    <MenuSection id="#drinks" sectionName={"Напитки"} menuItems={drinkList}/>
+    <MenuSection id="#snacks" sectionName={"Закуски"} menuItems={snackList}/>
 </div>
 
 <style>

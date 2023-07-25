@@ -82,8 +82,8 @@
     }
 
     .image {
-        width: 9.375rem;
-        height: 9.375rem;
+        width: 150px;
+        height: 150px;
         border-radius: 6.25rem;
         position: relative;
         display: grid;
