@@ -1,12 +1,20 @@
 <script>
     export let state = "default";
-    export let name = "Меню"
+    export let page = {
+        name: "Меню",
+        link: "menu"
+    }
+    export let currentPage = "menu";
+
+    function setPage() {
+        currentPage = page.link;
+    }
 </script>
 
 {#if state === "selected"}
-	<button><p class="selected">{name}</p></button>
+	<button on:click={setPage}><p class="selected">{page.name}</p></button>
 {:else}
-    <button><p>{name}</p></button>
+    <button on:click={setPage}><p>{page.name}</p></button>
 {/if}
 
 <style>

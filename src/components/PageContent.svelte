@@ -2,11 +2,24 @@
     import Header from "./Header/Header.svelte";
     import Menu from "./Menu/Menu.svelte";
     import Footer from "./Footer.svelte";
+
+    let currentPage="menu"
+
 </script>
 
 <div>
-    <Header />
-    <Menu />
+    <Header bind:currentPage/>
+
+    {#if currentPage === "menu"}
+        <Menu />        
+    {:else if currentPage === "about"} 
+        <p>Hello2</p>     
+    {:else if currentPage === "contacts"} 
+        <p>Hello3</p>     
+    {:else}
+        <p>Hello4</p>        
+    {/if}
+
     <Footer />
 </div>
 

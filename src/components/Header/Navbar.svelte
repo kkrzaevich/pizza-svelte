@@ -2,13 +2,15 @@
     import NavbarItem from "./NavbarItem.svelte";
     let src = "/cart.svg"
     let alt="Cart icon"
+
+    export let currentPage="menu"
 </script>
 
 <section>
     <div>
-        <NavbarItem name={"Меню"}/>
-        <NavbarItem name={"О нас"} state={"selected"}/>
-        <NavbarItem name={"Контакты"}/>
+        <NavbarItem bind:currentPage page={{name: "Меню", link: "menu"}}/>
+        <NavbarItem bind:currentPage page={{name: "О нас", link: "about"}} state={"selected"}/>
+        <NavbarItem bind:currentPage page={{name: "Контакты", link: "contacts"}}/>
     </div>
     <button><img {src} {alt}></button>
 </section>

@@ -94,21 +94,4 @@
         font-weight: 700;
         line-height: normal;
     }
-
-    .image {
-        width: 150px;
-        height: 150px;
-        border-radius: 6.25rem;
-        position: relative;
-        display: grid;
-        place-items: center;
-    }
-
-    .shadow-box {
-        width: 95%;
-        height: 95%;
-        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.25);
-        border-radius: 6.25rem;
-        z-index: -1;
-    }
 </style>
