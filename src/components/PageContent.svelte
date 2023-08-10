@@ -2,6 +2,7 @@
     import Header from "./Header/Header.svelte";
     import Menu from "./Menu/Menu.svelte";
     import Footer from "./Footer.svelte";
+    import About from "./About.svelte";
 
     let currentPage="menu"
 
@@ -13,7 +14,7 @@
     {#if currentPage === "menu"}
         <Menu />        
     {:else if currentPage === "about"} 
-        <p>Hello2</p>     
+        <About />     
     {:else if currentPage === "contacts"} 
         <p>Hello3</p>     
     {:else}

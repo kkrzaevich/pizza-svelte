@@ -8,9 +8,9 @@
 
 <section>
     <div>
-        <NavbarItem bind:currentPage page={{name: "Меню", link: "menu"}}/>
-        <NavbarItem bind:currentPage page={{name: "О нас", link: "about"}} state={"selected"}/>
-        <NavbarItem bind:currentPage page={{name: "Контакты", link: "contacts"}}/>
+        <NavbarItem bind:currentPage page={{name: "Меню", link: "menu", state: "selected"}}/>
+        <NavbarItem bind:currentPage page={{name: "О нас", link: "about", state: "default"}}/>
+        <NavbarItem bind:currentPage page={{name: "Контакты", link: "contacts", state: "default"}}/>
     </div>
     <button><img {src} {alt}></button>
 </section>
