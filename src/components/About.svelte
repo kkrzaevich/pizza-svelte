@@ -1,4 +1,9 @@
-<section>
+<script>
+    import { fade } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
+</script>
+
+<section in:fly={{ x: 200, duration: 1000 }} out:fade>
         <h1>О нас</h1>
         <div class="main-text">
             <p>Добро пожаловать в пиццерию в Экибазтузе, где можно насладиться самой вкусной пиццей в городе! Наша пиццерия известна своим качественным и разнообразным меню, отвечающим вкусам самых взыскательных гурманов.</p>
@@ -47,6 +52,22 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    .images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        align-self: stretch;
+    }
+
+    img {
+        height: 29.25rem;
+        flex: 1;
+        width: 0;
+        object-fit: cover;
+        object-position: 50% 80%;
     }
 
 </style>

@@ -1,9 +1,11 @@
 <script>
     import MenuChoose from "./MenuChoose.svelte";
     import MenuMenu from "./MenuMenu.svelte";
+    import { fade } from 'svelte/transition';
+    import { fly } from 'svelte/transition';
 </script>
 
-<div>
+<div in:fly={{ x: 200, duration: 1000 }} out:fade>
     <MenuChoose />
     <MenuMenu />
 </div>

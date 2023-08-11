@@ -47,6 +47,16 @@
         line-height: normal;
     }
 
+    a > .outer > .inner {
+        transition-property: background-color;
+        transition-duration: 0.35s;        
+    }
+
+    a p {
+        transition-property: font-weight;
+        transition-duration: 0.35s;      
+    }
+
     a:hover > .outer > .inner {
         background-color: rgba(0, 0, 0, 0); 
     }

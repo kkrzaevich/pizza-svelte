@@ -4,13 +4,34 @@
     let alt="Cart icon"
 
     export let currentPage="menu"
+
+    $: pages = [
+        {name: "Меню", link: "menu", state: "selected"},
+        {name: "О нас", link: "about", state: "default"},
+        {name: "Контакты", link: "contacts", state: "default"}
+    ]
+
+    function deselectPages(event) {
+        pages.forEach((page) => {
+            if (page.link === event.detail.selectedPage) {
+                page.state = "selected"
+            } else {
+                page.state = "default"
+            }
+        })
+        pages = pages;
+        console.log(pages);
+    }
+
+    
+
 </script>
 
 <section>
     <div>
-        <NavbarItem bind:currentPage page={{name: "Меню", link: "menu", state: "selected"}}/>
-        <NavbarItem bind:currentPage page={{name: "О нас", link: "about", state: "default"}}/>
-        <NavbarItem bind:currentPage page={{name: "Контакты", link: "contacts", state: "default"}}/>
+        {#each pages as pageDetails}
+            <NavbarItem on:selectedPage={deselectPages} bind:currentPage page={pageDetails}/>
+        {/each}
     </div>
     <button><img {src} {alt}></button>
 </section>
@@ -18,6 +39,11 @@
 <style>
     img:hover {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.20));
+    }
+
+    img {
+        transition-property: filter;
+        transition-duration: 0.35s;        
     }
 
     div {

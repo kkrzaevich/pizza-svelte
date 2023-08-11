@@ -1,4 +1,8 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
     export let page = {
         name: "Меню",
         link: "menu",
@@ -8,6 +12,9 @@
 
     function setPage() {
         currentPage = page.link;
+        dispatch('selectedPage', {
+            selectedPage: page.link
+        });
     }
 
 
@@ -39,8 +46,13 @@
         line-height: normal;
     }
 
+    button {
+        transition-property: text-shadow;
+        transition-duration: 0.35s;
+    }
+
     button:hover {
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.10);
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
     }
 </style>
 
