@@ -59,6 +59,15 @@
         gap: 1.5625rem;
     }
 
+    img:hover {
+        filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.495));
+    }
+
+    img {
+        transition-property: filter;
+        transition-duration: 0.35s;        
+    }
+
     .contacts {
         display: flex;
         min-width: 25rem;

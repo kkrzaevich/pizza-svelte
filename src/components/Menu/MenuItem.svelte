@@ -94,4 +94,14 @@
         font-weight: 700;
         line-height: normal;
     }
+
+    button {
+        transition-property: filter, background-color;
+        transition-duration: 0.35s;        
+    }
+    
+    button:hover {
+        background-color: var(--400, #E4A5FF);
+        filter: drop-shadow(0px 12px 25px rgba(126, 126, 126, 0.5));
+    }
 </style>
