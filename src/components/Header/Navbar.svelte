@@ -1,7 +1,9 @@
 <script>
     import NavbarItem from "./NavbarItem.svelte";
-    let src = "/cart.svg"
-    let alt="Cart icon"
+    let src1 = "/cart.svg"
+    let alt1="Cart icon"
+    let src2 = "/hamburger.svg"
+    let alt2="Menu icon"
 
     export let currentPage="menu"
 
@@ -33,7 +35,8 @@
             <NavbarItem on:selectedPage={deselectPages} bind:currentPage page={pageDetails}/>
         {/each}
     </div>
-    <button><img {src} {alt}></button>
+    <button class="cart"><img src={src1} alt={alt1}></button>
+    <button class="hamburger"><img src={src2} alt={alt2}></button>
 </section>
 
 <style>
@@ -58,5 +61,34 @@
         justify-content: flex-end;
         align-items: center;
         gap: 2rem;
+    }
+
+    .hamburger {
+        width: 3.6rem;
+        height: 2.4rem;
+        display: none;
+    }
+
+    @media screen and (max-width: 1119px) {
+        div {
+            display: none;
+            visibility: hidden;
+        }
+
+        .cart {
+            display: none;
+            visibility: hidden;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+    }
+
+    @media screen and (max-width: 699px) {
+        .hamburger {
+            width: 2.5rem;
+            height: 1.875rem;
+        }
     }
 </style>

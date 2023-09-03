@@ -16,4 +16,16 @@
     height: fit-content;
     background: var(--100, #FFE7CE);
   }
+
+  @media screen and (max-width: 1119px) {
+    :global(body) {
+      padding: 5rem;
+    }
+  }
+        
+  @media screen and (max-width: 699px) {
+    :global(body) {
+      padding: 2.5rem 1.25rem;
+    }
+  }  
 </style>

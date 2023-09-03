@@ -19,6 +19,8 @@
         align-items: center;
         gap: 1.9375rem;
     }
+    
+
 
     img {
         width: 4.75rem;
@@ -60,5 +62,24 @@
         font-style: normal;
         font-weight: 300;
         line-height: normal;
+    }
+
+    @media screen and (max-width: 699px) {
+        img {
+            width: 2.77175rem;
+            height: 2.5rem;
+        }
+
+        p {
+            display: none;
+        }
+
+        h1 {
+            font-family: Roboto;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
     }
 </style>
