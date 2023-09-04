@@ -62,4 +62,37 @@
         filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
     }
 
+    iframe {
+        max-width: 31.25rem;
+        max-height: 31.25rem;
+        flex: 1 0 0;
+        align-self: stretch;        
+    }
+
+    @media screen and (max-width: 1119px) {
+
+    }
+        
+    @media screen and (max-width: 699px) {
+        section {
+            gap: 2.8125rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        .map {
+            flex-shrink: 0;
+            max-width: 100%; 
+        }
+
+        iframe {       
+            max-width: 20rem;    
+        }
+    }  
 </style>

@@ -64,6 +64,9 @@
         line-height: normal;
     }
 
+    @media screen and (max-width: 1119px) {
+    } 
+
     @media screen and (max-width: 699px) {
         img {
             width: 2.77175rem;

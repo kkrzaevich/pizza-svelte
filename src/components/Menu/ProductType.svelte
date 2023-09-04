@@ -9,6 +9,7 @@
         <div class="inner" ></div>
     </div>
     <p>{name}</p>
+
 </a>
 
 <style>
@@ -63,5 +64,19 @@
 
     a:hover p {
         font-weight: 700;
+    }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+        .outer {
+            width: 5.625rem;
+            height: 5.625rem;
+        }  
+
+        p {
+            font-size: 1.25rem;
+        }
     }
 </style>

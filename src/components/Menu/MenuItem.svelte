@@ -18,6 +18,7 @@
 
 <style>
     .img-container {
+        min-width: 150px;
         width: 150px;
         height: 150px;
         display: flex;
@@ -104,4 +105,26 @@
         background-color: var(--400, #E4A5FF);
         filter: drop-shadow(0px 12px 25px rgba(126, 126, 126, 0.5));
     }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+        section {
+            min-width: 20rem;
+            max-width: 20rem;
+            height: unset;
+        }
+
+        .img-container {
+            min-width: 125px;
+            width: 125px;
+            height: 125px;
+        }
+
+        img {
+            max-width: 125px;
+            max-height: 125px;
+        }
+    }  
 </style>

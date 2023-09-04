@@ -98,4 +98,14 @@
         font-weight: 400;
         line-height: normal;
     }
+
+    @media screen and (max-width: 1119px) {
+        .contacts {
+            padding-left: unset;
+            align-items: flex-start;
+        }
+    }
+        
+    @media screen and (max-width: 699px) {
+    }  
 </style>

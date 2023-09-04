@@ -23,4 +23,10 @@
         flex-wrap: wrap;
         width: 100%;
     }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+    }  
 </style>

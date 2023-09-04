@@ -42,4 +42,21 @@
         align-self: stretch;
         flex-wrap: wrap;
     }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+        section {
+            gap: 2.8125rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        div {
+            gap: 2.8125rem 3rem;
+        }
+    } 
 </style>

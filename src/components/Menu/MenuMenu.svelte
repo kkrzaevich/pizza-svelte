@@ -23,4 +23,13 @@
         gap: 4.375rem;
         align-self: stretch; 
     }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+        div {
+            gap: 2.8125rem;
+        }
+    }  
 </style>

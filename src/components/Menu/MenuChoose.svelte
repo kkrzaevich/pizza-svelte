@@ -44,4 +44,17 @@
         align-items: center;
         gap: 1.5625rem;
     }
+
+    @media screen and (max-width: 1119px) {
+    }
+        
+    @media screen and (max-width: 699px) {
+        section {
+            padding: 0.625rem;
+        }
+
+        div {
+            gap: 0.9375rem;
+        }
+    }  
 </style>

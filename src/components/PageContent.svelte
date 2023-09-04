@@ -39,5 +39,9 @@
     }
         
     @media screen and (max-width: 699px) {
+        div {
+            min-width: 20rem;
+            gap: 2.8125rem;
+        }
     }            
 </style>
