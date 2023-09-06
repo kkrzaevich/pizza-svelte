@@ -2,13 +2,15 @@
   import PageContent from "./components/PageContent.svelte";
 </script>
 
-<section>
-  <PageContent />
-</section>
+<svelte:head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</svelte:head>
+
+<PageContent />
 
 
 <style>
-  section {
+  :global(body) {
     display: grid;
     grid-auto-flow: column;
     grid-area: header;
@@ -22,13 +24,13 @@
   }
 
   @media screen and (max-width: 1119px) {
-    section {
+    :global(body) {
       padding: 5rem;
     }
   }
         
   @media screen and (max-width: 699px) {
-    section {
+    :global(body) {
       padding: 2.5rem 1.25rem;
     }
   }  

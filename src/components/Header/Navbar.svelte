@@ -102,7 +102,6 @@
             z-index: 2;
 
             display: flex;
-            width: 21.875rem;
             padding: 6.25rem 5rem;
             justify-content: flex-end;
             align-items: center;
@@ -137,6 +136,7 @@
         .hamburger {
             width: 2.5rem;
             height: 1.875rem;
+            display: flex;
         }
 
         .overlay-container {
@@ -146,7 +146,6 @@
             z-index: 2;
 
             display: flex;
-            width: 11.25rem;
             padding: 2.8125rem 1.25rem;
             justify-content: flex-end;
             align-items: center;

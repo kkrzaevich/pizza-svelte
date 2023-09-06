@@ -113,7 +113,7 @@
         section {
             min-width: 20rem;
             max-width: 20rem;
-            height: unset;
+            height: auto;
         }
 
         .img-container {
@@ -125,6 +125,11 @@
         img {
             max-width: 125px;
             max-height: 125px;
+        }
+
+        p {
+            height: auto;
+            width: auto;
         }
     }  
 </style>

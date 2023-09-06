@@ -107,5 +107,20 @@
     }
         
     @media screen and (max-width: 699px) {
+        .contacts {
+            min-width: unset;
+            width: 100%;
+        }
+
+        .social {
+            min-width: unset;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: left;
+        }
+
+        .copyright {
+            min-width: unset;
+        }
     }  
 </style>
