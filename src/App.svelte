@@ -19,7 +19,7 @@
     gap: 0.625rem;
     width: 100%;
     height: fit-content;
-    background: var(--100, #FFE7CE);
+    background: var(--100, #ffffff);
     position: relative;
   }
 

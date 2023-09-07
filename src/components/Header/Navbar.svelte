@@ -105,10 +105,15 @@
             padding: 6.25rem 5rem;
             justify-content: flex-end;
             align-items: center;
-            align-content: center;
+            align-content: flex-start;
             gap: 0.625rem;
             flex-wrap: wrap;
-            background: #FFF;
+            background:  #FFE7CE;
+
+            width: 50vw;
+            height: 100vh;
+
+            filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 0.25));
         }
 
         .overlay-menu {
@@ -149,10 +154,15 @@
             padding: 2.8125rem 1.25rem;
             justify-content: flex-end;
             align-items: center;
-            align-content: center;
+            align-content: flex-start;
             gap: 0.625rem;
             flex-wrap: wrap;
-            background: #FFF;
+            background:  #FFE7CE;
+
+            width: 50vw;
+            height: 100vh;
+
+            filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 1));
         }
 
         .cart {
