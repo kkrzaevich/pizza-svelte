@@ -10,7 +10,7 @@
     <h1>{sectionName}</h1>
     <div class="menu-pizza-grid">
         {#each menuItems as item}
-            <MenuItem heading = {item.heading} description = {item.description} src = {item.src}/>
+            <MenuItem heading = {item.heading} description = {item.description} src = {item.src} price={item.price} weight={item.weight}/>
         {/each}
     </div>
 </section>

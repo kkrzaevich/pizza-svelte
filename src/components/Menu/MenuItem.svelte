@@ -1,6 +1,8 @@
 <script>
     export let heading="Маргарита";
     export let description="Самая вкусная пицца";
+    export let price=2500;
+    export let weight=750;
     export let src="./pizza1.png";
 </script>
 
@@ -12,6 +14,7 @@
     <div class="description">
         <h1>{heading}</h1>
         <p>{description}</p>
+        <p class="price">{price} тг. {weight} г.</p>
         <button><span>Выбрать</span></button>
     </div>
 </section>
@@ -72,6 +75,14 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+    }
+
+    .price {
+        /* font-style: italic; */
+        font-weight: 300;
+        font-style: italic;
+        height: unset;
+        opacity: 0.7;
     }
 
     button {

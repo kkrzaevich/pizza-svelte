@@ -8,7 +8,7 @@
 </script>
 
 <div>
-    <Logo />
+    <Logo/>
     <Navbar bind:currentPage/>
 </div>
 

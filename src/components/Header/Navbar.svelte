@@ -53,7 +53,7 @@
                         {#each pages as pageDetails}
                             <NavbarItem on:selectedPage={deselectPages} bind:currentPage page={pageDetails}/>
                         {/each}
-                    <button class="cart" on:click={() => {hamburgerClicked = false}}><img src={src1} alt={alt1}></button>
+                        <button class="cart" on:click={() => {hamburgerClicked = false}}><img src={src1} alt={alt1}></button>
                     </div>
                 </div>
             </div>
