@@ -1,9 +1,26 @@
 <script>
+    import { displayOverlay } from "../stores";
+    import { selectedItem } from "../stores";
+
     export let heading="Маргарита";
     export let description="Самая вкусная пицца";
     export let price=2500;
     export let weight=750;
+    export let ingredients="вода, сахар, соль, рог единорога";
     export let src="./pizza1.png";
+
+
+    function setItem() {
+        return {
+            heading: heading,
+            description: description,
+            src: src,
+            price: price,
+            ingredients: ingredients,
+            weight: weight,
+            amount: 1,
+        };
+    }
 </script>
 
 <section>
@@ -15,7 +32,7 @@
         <h1>{heading}</h1>
         <p>{description}</p>
         <p class="price">{price} тг. {weight} г.</p>
-        <button><span>Выбрать</span></button>
+        <button on:click={()=>{displayOverlay.update((val) => true); selectedItem.update((val) => setItem())}}><span>Выбрать</span></button>
     </div>
 </section>
 

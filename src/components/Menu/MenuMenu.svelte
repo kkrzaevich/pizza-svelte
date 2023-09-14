@@ -1,9 +1,6 @@
 <script>
     import MenuSection from "./MenuSection.svelte";
 
-    import MenuItem from "./MenuItem.svelte";
-    import Menu from "./Menu.svelte";
-
     import { pizzaList } from "./ItemsList";
     import { drinkList } from "./ItemsList";
     import { snackList } from "./ItemsList";

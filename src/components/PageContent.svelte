@@ -4,29 +4,70 @@
     import Footer from "./Footer.svelte";
     import About from "./About.svelte";
     import Contacts from "./Contacts.svelte";
+    import { displayOverlay } from "./stores";
+    import { cart } from "./stores";
+    import Overlay from "./Overlay.svelte";
 
-    let currentPage="menu"
+    let currentPage="menu";
+    let displayOverlayFlag=false;
 
+    displayOverlay.subscribe((value)=>{displayOverlayFlag = value})
 </script>
 
-<div>
-    <Header bind:currentPage/>
+<section>
+    {#if displayOverlayFlag}
+        <div class="page disabled">
+            <Header bind:currentPage/>
 
-    {#if currentPage === "menu"}
-        <Menu />        
-    {:else if currentPage === "about"} 
-        <About />     
-    {:else if currentPage === "contacts"} 
-        <Contacts />     
+            {#if currentPage === "menu"}
+                <Menu />        
+            {:else if currentPage === "about"} 
+                <About />     
+            {:else if currentPage === "contacts"} 
+                <Contacts />     
+            {:else}
+                <p>Not found :(</p>        
+            {/if}
+        
+            <Footer />
+        </div>
+        <div class="overlay">
+            <Overlay/>
+        </div>
     {:else}
-        <p>Not found :(</p>        
-    {/if}
+        <div class="page">
+            <Header bind:currentPage/>
 
-    <Footer />
-</div>
+            {#if currentPage === "menu"}
+                <Menu />        
+            {:else if currentPage === "about"} 
+                <About />     
+            {:else if currentPage === "contacts"} 
+                <Contacts />     
+            {:else}
+                <p>Not found :(</p>        
+            {/if}
+        
+            <Footer />
+        </div>
+    {/if}
+</section>
 
 <style>
-    div {
+    .disabled {
+        height: 100%;
+        overflow-y: hidden;
+        filter: blur(3px);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .page {
         display: flex;
         min-width: 28.75rem;
         flex-direction: column;
@@ -36,12 +77,21 @@
     }
 
     @media screen and (max-width: 1119px) {
+        .overlay {
+            position: fixed;
+            top: 50vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: none;
+        }
     }
         
     @media screen and (max-width: 699px) {
-        div {
+        .page {
             min-width: 20rem;
             gap: 2.8125rem;
         }
+
+
     }            
 </style>
