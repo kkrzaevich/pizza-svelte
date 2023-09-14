@@ -9,6 +9,7 @@
     let alt1="Cart icon"
     let src2 = "/hamburger.svg"
     let alt2="Menu icon"
+    let hello = "hello"
 
     export let currentPage="menu"
 
