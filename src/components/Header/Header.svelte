@@ -2,14 +2,12 @@
     import Navbar from "./Navbar.svelte";
     import Logo from "./Logo.svelte";
 
-    export let currentPage="menu"
-
 
 </script>
 
 <div>
     <Logo/>
-    <Navbar bind:currentPage/>
+    <Navbar/>
 </div>
 
 <style>

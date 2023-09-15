@@ -4,12 +4,16 @@
     import Footer from "./Footer.svelte";
     import About from "./About.svelte";
     import Contacts from "./Contacts.svelte";
+    import Cart from "./Cart.svelte";
     import { displayOverlay } from "./stores";
     import { cart } from "./stores";
+    import { thepage } from "./stores";
     import Overlay from "./Overlay.svelte";
 
     let currentPage="menu";
     let displayOverlayFlag=false;
+
+    thepage.subscribe((val)=>(currentPage = val.link))
 
     displayOverlay.subscribe((value)=>{displayOverlayFlag = value})
 </script>
@@ -17,14 +21,16 @@
 <section>
     {#if displayOverlayFlag}
         <div class="page disabled">
-            <Header bind:currentPage/>
+            <Header/>
 
             {#if currentPage === "menu"}
                 <Menu />        
             {:else if currentPage === "about"} 
                 <About />     
             {:else if currentPage === "contacts"} 
-                <Contacts />     
+                <Contacts />  
+            {:else if currentPage === "cart"} 
+                <Cart />    
             {:else}
                 <p>Not found :(</p>        
             {/if}
@@ -36,7 +42,7 @@
         </div>
     {:else}
         <div class="page">
-            <Header bind:currentPage/>
+            <Header/>
 
             {#if currentPage === "menu"}
                 <Menu />        
@@ -44,6 +50,8 @@
                 <About />     
             {:else if currentPage === "contacts"} 
                 <Contacts />     
+            {:else if currentPage === "cart"} 
+                <Cart />  
             {:else}
                 <p>Not found :(</p>        
             {/if}

@@ -1,6 +1,7 @@
 <script>
     import { fly } from 'svelte/transition';
     import NavbarItem from "./NavbarItem.svelte";
+    import CartLink from './CartLink.svelte';
     $: outerWidth = 0
 
     $: hamburgerClicked = false;
@@ -9,18 +10,18 @@
     let alt1="Cart icon"
     let src2 = "/hamburger.svg"
     let alt2="Menu icon"
-    let hello = "hello"
 
-    export let currentPage="menu"
+    let currentPage="menu"
 
     $: pages = [
-        {name: "Меню", link: "menu", state: "selected"},
+        [{name: "Меню", link: "menu", state: "selected"},
         {name: "О нас", link: "about", state: "default"},
-        {name: "Контакты", link: "contacts", state: "default"}
+        {name: "Контакты", link: "contacts", state: "default"}],
+        [{name: "Корзина", link: "cart", state: "default"}]
     ]
 
     function deselectPages(event) {
-        pages.forEach((page) => {
+        pages[0].forEach((page) => {
             if (page.link === event.detail.selectedPage) {
                 page.state = "selected"
             } else {
@@ -40,21 +41,21 @@
 <section>
     {#if outerWidth >= 1134}
         <div class="links">
-            {#each pages as pageDetails}
+            {#each pages[0] as pageDetails}
                 <NavbarItem on:selectedPage={deselectPages} bind:currentPage page={pageDetails}/>
             {/each}
         </div>
-        <button class="cart"><img src={src1} alt={alt1}></button>
+        <CartLink on:selectedPage={deselectPages} bind:currentPage page={pages[1][0]}/>
     {:else}
         {#if hamburgerClicked}
             <div class="overlay-container" in:fly={{ x: 200, duration: 500 }} out:fly={{ x: 200, duration: 500 }}>
                 <div class="overlay-menu">
                     <button class="hamburger" on:click={() => {hamburgerClicked = false}}><img src={src2} alt={alt2}></button>
                     <div class="links">
-                        {#each pages as pageDetails}
+                        {#each pages[0] as pageDetails}
                             <NavbarItem on:selectedPage={deselectPages} bind:currentPage page={pageDetails}/>
                         {/each}
-                        <button class="cart" on:click={() => {hamburgerClicked = false}}><img src={src1} alt={alt1}></button>
+                        <CartLink on:selectedPage={deselectPages} bind:currentPage page={pages[1][0]}/>
                     </div>
                 </div>
             </div>
@@ -164,11 +165,6 @@
             height: 100vh;
 
             filter: drop-shadow(4px 0px 4px rgba(0, 0, 0, 1));
-        }
-
-        .cart {
-            width: 3.125rem;
-            height: 3.12513rem;
         }
 
     }

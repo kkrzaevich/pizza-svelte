@@ -1,5 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte';
+    import { thepage } from '../stores';
 
     const dispatch = createEventDispatcher();
 
@@ -15,6 +16,7 @@
         dispatch('selectedPage', {
             selectedPage: page.link
         });
+        thepage.update((val)=>{return page});
     }
 
 
