@@ -5,6 +5,7 @@
     import About from "./About.svelte";
     import Contacts from "./Contacts.svelte";
     import Cart from "./Cart.svelte";
+    import Order from "./Order.svelte";
     import { displayOverlay } from "./stores";
     import { cart } from "./stores";
     import { thepage } from "./stores";
@@ -13,7 +14,7 @@
     let currentPage="menu";
     let displayOverlayFlag=false;
 
-    thepage.subscribe((val)=>(currentPage = val.link))
+    thepage.subscribe((val)=>{currentPage = val.link; console.log("current page is ", currentPage)})
 
     displayOverlay.subscribe((value)=>{displayOverlayFlag = value})
 </script>
@@ -31,6 +32,8 @@
                 <Contacts />  
             {:else if currentPage === "cart"} 
                 <Cart />    
+            {:else if currentPage === "order"} 
+                <Order />  
             {:else}
                 <p>Not found :(</p>        
             {/if}
@@ -52,6 +55,8 @@
                 <Contacts />     
             {:else if currentPage === "cart"} 
                 <Cart />  
+            {:else if currentPage === "order"} 
+                <Order />  
             {:else}
                 <p>Not found :(</p>        
             {/if}

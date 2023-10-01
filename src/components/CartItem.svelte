@@ -4,7 +4,6 @@
 
     let localItem = {};
     let localCart = [];
-    let amount = 1;
 
     selectedItem.subscribe((item)=>{localItem = item})
     cart.subscribe((cart)=>{localCart = cart})
@@ -20,42 +19,143 @@
     }
 
     const increment = () => {
-        if (localItem.amount <= 99) {
-            localItem.amount++;
-            selectedItem.update((val) => localItem)
+        if (item.amount <= 99) {
+            const index = localCart.findIndex(object => (item.heading === object.heading))
+            localCart[index].amount++;
+            item.amount = localCart[index].amount;
+            console.log("local cart ", localCart)
+            cart.update((cart) => localCart)
         }
     }
 
     const decrement = () => {
-        if (localItem.amount >= 2) {
-            localItem.amount--;
-            selectedItem.update((val) => localItem)
+        if (item.amount >= 2) {
+            const index = localCart.findIndex(object => (item.heading === object.heading))
+            localCart[index].amount--;
+            item.amount = localCart[index].amount;
+            console.log("local cart ", localCart)
+            cart.update((cart) => localCart)
         }
     }
 
-    const add = () => {
-        localCart.push(localItem)
-        cart.update((cart) => localCart)
+    const deleteItem = () => {
+        const newCart = localCart.filter(object => {
+            return object.heading !== item.heading;
+        });
+        cart.update((cart) => newCart)
     }
 </script>
 
 <section>
-    <img src={item.src} alt="item pic">
+    <img class="item-pic" src={item.src} alt="item pic">
     <div class="annotations">
         <h1>{item.heading}</h1>
-        <p>{item.price}</p>
+        <p>{item.price} тг.</p>
     </div>
-    <div class="add">
+    <div class="delete">
+        <button class="delete-button" on:click={deleteItem}><img class="delete-pic" src="/trash.svg" alt="delete item"></button>
         <div class="amount">
             <button on:click={decrement}><span class="amount-text">-</span></button>
-            <p><span class="amount-text">{localItem.amount}</span></p>
+            <p><span class="amount-text">{item.amount}</span></p>
             <button on:click={increment}><span class="amount-text">+</span></button>
         </div>
-        <button class="delete-button" on:click={add}><span class="add-text">В корзину</span></button>
     </div>
 
 </section>
 
 <style>
+    section {
+        display: flex;
+        padding: 25px;
+        align-items: center;
+        gap: 70px;
+        border-radius: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        background: #FFF;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
 
+    .item-pic {
+        width: 125px;
+        height: 125px;
+        flex-shrink: 0;
+        border-radius: 100px;
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .annotations {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        flex: 1 0 0;
+    }
+
+    h1 {
+        align-self: stretch;
+        color: var(--900, #000);
+        /* bigger-bold */
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    p {
+        align-self: stretch;
+        color: var(--900, #000);
+        /* bigger-italic */
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 200;
+        line-height: normal;
+    }
+
+    .delete {
+        display: flex;
+        padding: 5px 0px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        align-self: stretch;
+    }
+
+    .delete-pic {
+        width: 36px;
+        height: 36px;
+    }
+
+    .amount {
+        display: flex;
+        padding: 10px 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 10px;
+        background: #FFF;
+        box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.05) inset;
+    }
+
+    .amount-text {
+        color: var(--900, #000);
+        text-align: center;
+        /* bigger-bold */
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    @media screen and (max-width: 1119px) {
+
+    }
+        
+    @media screen and (max-width: 699px) {
+
+    }  
 </style>
