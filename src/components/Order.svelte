@@ -1,14 +1,28 @@
 <script>
     import { fade } from 'svelte/transition';
     import { fly } from 'svelte/transition';
-    import { cart } from "./stores";
-    import { selectedItem } from './stores';
+    import { cart, user } from "./stores";
     import { thepage } from './stores';
-    import CartItem from './CartItem.svelte';
+
+    $: maxlength = 12;
+    $: cols = 50;
+
+    $: outerWidth = 0;
+    $: if (outerWidth > 1150) {
+        maxlength = 12;
+        cols = 50;
+    } else {
+        maxlength = 50;
+        cols = 200;
+    }
+
 
     const telPattern = "\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
     let localCart = [];
     let sum = 0;
+
+    const userData = ['','','','']
+    let display = "none";
 
     cart.subscribe((cart) => {
         localCart = cart;
@@ -18,48 +32,81 @@
         }
     })
     
-    import { onMount } from 'svelte';
+    let nextPage = {
+        name: "Мы работаем над этим :(",
+        link: "work-in-progress",
+        state: "default"
+    }
+
+    function goToNextPage() {
+        let empty = false;
+        for (const element of userData) {
+            if (element === '') {empty = true}
+        }
+        if (!empty) {
+            thepage.update((val)=>{return nextPage});
+        } else {
+            console.log("Заполните все поля")
+            display = "block";
+        }
+
+    }
 </script>
+
+<svelte:window bind:outerWidth />
 
 <section in:fly={{ x: 200, duration: 1000 }} out:fade>
     <h1>Оформление заказа</h1>
     <div class="main-content">
+        <div class="main-cost-mobile">
+            <h2>Заказ</h2>
+            {#each localCart as item}
+                <div class="cost-line">
+                    <p>{item.amount} x {item.heading}</p>
+                    <p>{item.price} тг</p>
+                </div>
+            {/each}
+            <div class="total-line">
+                <p>Итого:</p>
+                <p>{sum} тг</p>
+            </div>
+        </div>
         <div class="main-data">
             <div class="customer-information">
                 <h2>Данные получателя</h2>
                 <div class="customer-container">
                     <div class="customer-line">
                         <p>Имя</p>
-                        <input type="text" placeholder="Алихан">
+                        <input type="text" placeholder="Алихан" bind:value={userData[0]} >
                     </div>
                     <div class="customer-line">
                         <p>Номер телефона</p>
-                        <input type="tel" placeholder="+79991112233" pattern="{telPattern}" maxlength="12">
+                        <input type="tel" placeholder="+79991112233" pattern="{telPattern}" maxlength="{maxlength}" bind:value={userData[1]} >
                     </div>
                     <div class="customer-line">
                         <p>Адрес</p>
-                        <textarea rows="2" cols="50" style="resize: none;" placeholder="Экибастуз, ул. Машхур Жусупа, 45, кв. 11"></textarea>
+                        <textarea rows="2" cols="{cols}" style="resize: none;" placeholder="Экибастуз, ул. Машхур Жусупа, 45, кв. 11" bind:value={userData[2]} ></textarea>
                     </div>
                 </div>
             </div>
             <div class="pay-information">
                 <h2>Способ оплаты</h2>
                 <div class="pay-radio">
-                    <input type="radio" class="pay-button" id="payChoice1" name="pay" value="online" />
+                    <input type="radio" class="pay-button" id="payChoice1" name="pay" value="online" bind:group={userData[3]}/>
                     <label class="pay-label" for="payChoice1">Картой онлайн</label>
                 </div>
                 <div class="pay-radio">
-                    <input type="radio" class="pay-button" id="payChoice2" name="pay" value="card" />
+                    <input type="radio" class="pay-button" id="payChoice2" name="pay" value="card"  bind:group={userData[3]}/>
                     <label class="pay-label" for="payChoice2">Картой при получении</label>
                 </div>
                 <div class="pay-radio">
-                    <input type="radio" class="pay-button" id="payChoice3" name="pay" value="cash" />
+                    <input type="radio" class="pay-button" id="payChoice3" name="pay" value="cash"  bind:group={userData[3]}/>
                     <label class="pay-label" for="payChoice3">Наличными при получении</label>
                 </div>
             </div>
-            <button class="order-button"><p>Оформить заказ</p></button>
+            <button class="order-button" on:click={goToNextPage}><p>Оформить заказ</p></button>
         </div>
-        <div class="main-cost">
+        <div class="main-cost-desktop">
             <h2>Заказ</h2>
             {#each localCart as item}
                 <div class="cost-line">
@@ -73,6 +120,7 @@
             </div>
         </div>
     </div>
+    <p class="error-text" style="display: {display}" in:fade out:fade>Заполните все поля</p>
 </section>
 
 <style>
@@ -119,7 +167,7 @@
         flex: 1 0 0;
     }
 
-    .main-cost {
+    .main-cost-desktop {
         display: flex;
         padding: 35px;
         flex-direction: column;
@@ -130,6 +178,10 @@
         border: 1px solid rgba(0, 0, 0, 0.20);
         background: var(--100, #FFE7CE);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .main-cost-mobile {
+        display: none;
     }
 
     .customer-information {
@@ -320,4 +372,62 @@
         font-weight: 700;
         line-height: normal;
     }
+
+    .error-text {
+        color: red;
+        /* medium */
+        font-family: Roboto;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: none;
+    }
+
+    @media screen and (max-width: 1119px) {
+        .main-cost-desktop {
+            display: none;
+        }
+
+        .main-cost-mobile {
+            display: flex;
+            padding: 35px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+            align-self: stretch;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.20);
+            background: var(--100, #FFE7CE);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 45px;
+            align-self: stretch;
+        }
+
+        .cost-line > p {
+            max-width: unset;
+        }
+    }
+        
+    @media screen and (max-width: 699px) {
+        h1 {
+            color: var(--900, #000);
+            /* bigger-bold */
+            font-family: Roboto;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    } 
 </style>

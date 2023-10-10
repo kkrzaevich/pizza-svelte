@@ -46,7 +46,7 @@
     }
 </script>
 
-<section>
+<section class="desktop">
     <img class="item-pic" src={item.src} alt="item pic">
     <div class="annotations">
         <h1>{item.heading}</h1>
@@ -60,11 +60,30 @@
             <button on:click={increment}><span class="amount-text">+</span></button>
         </div>
     </div>
+</section>
 
+<section class="mobile">
+    <div class="image-container">
+        <img class="item-pic" src={item.src} alt="item pic">
+        <button class="delete-button" on:click={deleteItem}><img class="delete-pic" src="/trash.svg" alt="delete item"></button>
+    </div>
+    <div class="text-container">
+        <div class="annotations">
+            <h1>{item.heading}</h1>
+            <p>{item.price} тг.</p>
+        </div>
+        <div class="delete">
+            <div class="amount">
+                <button on:click={decrement}><span class="amount-text">-</span></button>
+                <p><span class="amount-text">{item.amount}</span></p>
+                <button on:click={increment}><span class="amount-text">+</span></button>
+            </div>
+        </div>
+    </div>
 </section>
 
 <style>
-    section {
+    .desktop {
         display: flex;
         padding: 25px;
         align-items: center;
@@ -151,11 +170,57 @@
         line-height: normal;
     }
 
+    .mobile {
+        display: none;
+    }
+
     @media screen and (max-width: 1119px) {
 
     }
         
     @media screen and (max-width: 699px) {
+        .desktop {
+            display: none;
+        }
 
+        .mobile {
+            display: flex;
+            padding: 25px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            align-self: stretch;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-self: stretch;
+        }
+
+        .text-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+            align-self: stretch;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .amount-text {
+            font-size: 20px;
+        }
     }  
 </style>

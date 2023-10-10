@@ -136,7 +136,21 @@
     }
         
     @media screen and (max-width: 699px) {
+        h1 {
+            font-size: 24px;
+        }
 
+        p {
+            font-size: 16px;
+        }
+
+        span, .sum {
+            font-size: 20px;
+        }
+
+        section {
+            gap: 45px;
+        }
     }  
 
 </style>

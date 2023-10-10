@@ -7,9 +7,9 @@
     import Cart from "./Cart.svelte";
     import Order from "./Order.svelte";
     import { displayOverlay } from "./stores";
-    import { cart } from "./stores";
     import { thepage } from "./stores";
     import Overlay from "./Overlay.svelte";
+    import WorkInProgress from "./WorkInProgress.svelte";
 
     let currentPage="menu";
     let displayOverlayFlag=false;
@@ -34,6 +34,8 @@
                 <Cart />    
             {:else if currentPage === "order"} 
                 <Order />  
+            {:else if currentPage === "work-in-progress"} 
+                <WorkInProgress />  
             {:else}
                 <p>Not found :(</p>        
             {/if}
@@ -57,6 +59,8 @@
                 <Cart />  
             {:else if currentPage === "order"} 
                 <Order />  
+            {:else if currentPage === "work-in-progress"} 
+                <WorkInProgress />  
             {:else}
                 <p>Not found :(</p>        
             {/if}
