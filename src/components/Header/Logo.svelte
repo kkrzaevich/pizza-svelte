@@ -17,14 +17,14 @@
     section {
         display: flex;
         align-items: center;
-        gap: 1.9375rem;
+        gap: 31px;
     }
     
 
 
     img {
-        width: 4.75rem;
-        height: 4.3125rem;
+        width: 76px;
+        height: 69px;
         fill: var(--200, #FFCDA8);
         stroke-width: 1px;
         stroke: #000;
@@ -35,12 +35,12 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 16px;
     }
 
     h1 {
-        width: 15.9375rem;
-        height: 1.9375rem;
+        width: 255px;
+        height: 31px;
         color: #000;
 
         /* logo-main */
@@ -52,8 +52,8 @@
     }
 
     p {
-        width: 21.3125rem;
-        height: 1.9375rem;
+        width: 341px;
+        height: 31px;
         color: #000;
 
         /* bigger-subtext */

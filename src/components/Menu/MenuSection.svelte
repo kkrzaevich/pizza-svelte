@@ -20,7 +20,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 4.375rem;
+        gap: 70px;
         align-self: stretch;
     }
 
@@ -38,7 +38,7 @@
         display: flex;
         align-items: center;
         align-content: center;
-        gap: 1.75rem 3rem;
+        gap: 28px 48px;
         align-self: stretch;
         flex-wrap: wrap;
     }
@@ -48,7 +48,7 @@
         
     @media screen and (max-width: 699px) {
         section {
-            gap: 2.8125rem;
+            gap: 45px;
         }
 
         h1 {
@@ -56,7 +56,7 @@
         }
 
         div {
-            gap: 2.8125rem 3rem;
+            gap: 45px 48px;
         }
     } 
 </style>

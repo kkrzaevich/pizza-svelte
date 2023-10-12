@@ -6,8 +6,6 @@
 
     $: hamburgerClicked = false;
     
-    let src1 = "/cart.svg"
-    let alt1="Cart icon"
     let src2 = "/hamburger.svg"
     let alt2="Menu icon"
 
@@ -79,21 +77,21 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 32px;
     }
 
     section {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        gap: 2rem;
+        gap: 32px;
     }
 
     @media screen and (max-width: 1119px) {
 
         .hamburger {
-            width: 3.6rem;
-            height: 2.4rem;
+            width: 57.6px;
+            height: 38.4px;
             display: flex;
         }
 
@@ -104,11 +102,11 @@
             z-index: 2;
 
             display: flex;
-            padding: 6.25rem 5rem;
+            padding: 100px 80px;
             justify-content: flex-end;
             align-items: center;
             align-content: flex-start;
-            gap: 0.625rem;
+            gap: 10px;
             flex-wrap: wrap;
             background:  #FFE7CE;
 
@@ -124,7 +122,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-end;
-            gap: 6.25rem;
+            gap: 100px;
             flex: 1 0 0;
         }
 
@@ -133,7 +131,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-end;
-            gap: 1.875rem;
+            gap: 30px;
         }
 
     }
@@ -141,8 +139,8 @@
     @media screen and (max-width: 699px) {
 
         .hamburger {
-            width: 2.5rem;
-            height: 1.875rem;
+            width: 40px;
+            height: 30px;
             display: flex;
         }
 
@@ -153,11 +151,11 @@
             z-index: 2;
 
             display: flex;
-            padding: 2.8125rem 1.25rem;
+            padding: 45px 20px;
             justify-content: flex-end;
             align-items: center;
             align-content: flex-start;
-            gap: 0.625rem;
+            gap: 10px;
             flex-wrap: wrap;
             background:  #FFE7CE;
 

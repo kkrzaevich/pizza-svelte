@@ -37,8 +37,8 @@
         
     @media screen and (max-width: 699px) {
         .cart {
-            width: 3.125rem;
-            height: 3.12513rem;
+            width: 50px;
+            height: 50px;
         }
     }  
 </style>

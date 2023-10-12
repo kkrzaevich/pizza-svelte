@@ -15,7 +15,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 4.375rem;
+        gap: 70px;
         align-self: stretch;
     }
 
@@ -24,7 +24,7 @@
         
     @media screen and (max-width: 699px) {
         div {
-            gap: 2.8125rem;
+            gap: 45px;
         }
     }  
 </style>

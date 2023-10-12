@@ -27,13 +27,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 4.375rem;
+        gap: 70px;
         align-self: stretch;
     }
 
     h1 {
-        width: 12.4375rem;
-        height: 2.0625rem;
+        width: 199px;
+        height: 33px;
         color: #000;
         /* logo-main */
         font-family: Roboto;
@@ -55,16 +55,16 @@
     }
 
     .map {
-        max-width: 31.25rem;
-        max-height: 31.25rem;
+        max-width: 500px;
+        max-height: 500px;
         flex: 1 0 0;
         align-self: stretch;
         filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.25));
     }
 
     iframe {
-        max-width: 31.25rem;
-        max-height: 31.25rem;
+        max-width: 500px;
+        max-height: 500px;
         flex: 1 0 0;
         align-self: stretch;        
     }
@@ -75,7 +75,7 @@
         
     @media screen and (max-width: 699px) {
         section {
-            gap: 2.8125rem;
+            gap: 45px;
         }
 
         h1 {
@@ -92,7 +92,7 @@
         }
 
         iframe {       
-            max-width: 20rem;    
+            max-width: 320px;    
         }
     }  
 </style>

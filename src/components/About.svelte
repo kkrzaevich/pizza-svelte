@@ -27,13 +27,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 4.375rem;
+        gap: 70px;
         align-self: stretch;
     }
 
     h1 {
-        width: 12.4375rem;
-        height: 2.0625rem;
+        width: 199px;
+        height: 33px;
         color: #000;
         /* logo-main */
         font-family: Roboto;
@@ -58,12 +58,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 3rem;
+        gap: 48px;
         align-self: stretch;
     }
 
     img {
-        height: 29.25rem;
+        height: 468px;
         flex: 1;
         width: 0;
         object-fit: cover;
@@ -76,7 +76,7 @@
         
     @media screen and (max-width: 699px) {
         section {
-            gap: 2.8125rem;
+            gap: 45px;
         }
 
         h1 {

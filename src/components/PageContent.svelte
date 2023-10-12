@@ -14,7 +14,7 @@
     let currentPage="menu";
     let displayOverlayFlag=false;
 
-    thepage.subscribe((val)=>{currentPage = val.link; console.log("current page is ", currentPage)})
+    thepage.subscribe((val)=>{currentPage = val.link})
 
     displayOverlay.subscribe((value)=>{displayOverlayFlag = value})
 </script>
@@ -86,10 +86,10 @@
 
     .page {
         display: flex;
-        min-width: 28.75rem;
+        min-width: 460px;
         flex-direction: column;
         align-items: center;
-        gap: 4.375rem;
+        gap: 70px;
         flex: 1 0 0;
     }
 
@@ -105,8 +105,8 @@
         
     @media screen and (max-width: 699px) {
         .page {
-            min-width: 20rem;
-            gap: 2.8125rem;
+            min-width: 320px;
+            gap: 45px;
         }
 
 

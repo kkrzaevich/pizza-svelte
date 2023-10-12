@@ -6,11 +6,8 @@
     import { thepage } from './stores';
     import CartItem from './CartItem.svelte';
 
-    import { onMount } from 'svelte';
-
     let localItem = {};
     let localCart = [];
-    let amount = 1;
     let sum = 0;
 
     selectedItem.subscribe((item)=>{localItem = item})
@@ -20,10 +17,6 @@
         for (const cartItem of localCart) {
             sum += cartItem.price * cartItem.amount;
         }
-    })
-
-    onMount(() => {
-        console.log(localCart.length)
     })
 
     let orderPage = {
@@ -58,13 +51,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 4.375rem;
+        gap: 70px;
         align-self: stretch;
     }
 
     h1 {
-        width: 12.4375rem;
-        height: 2.0625rem;
+        width: 199px;
+        height: 33px;
         flex-shrink: 0;
         color: var(--900, #000);
         /* logo-main */
@@ -123,7 +116,7 @@
         text-align: center;
         /* bigger-bold */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -137,15 +130,15 @@
         
     @media screen and (max-width: 699px) {
         h1 {
-            font-size: 24px;
+            font-size: 1.5rem;
         }
 
         p {
-            font-size: 16px;
+            font-size: 1rem;
         }
 
         span, .sum {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
 
         section {

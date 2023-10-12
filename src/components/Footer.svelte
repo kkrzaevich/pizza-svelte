@@ -23,8 +23,8 @@
     }
 
     img {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 20px;
+        height: 20px;
         flex-shrink: 0;
     }
 
@@ -33,13 +33,13 @@
         justify-content: space-between;
         align-items: flex-start;
         align-content: flex-start;
-        row-gap: 1.25rem;
+        row-gap: 20px;
         align-self: stretch;
         flex-wrap: wrap;
     }
 
     .copyright {
-        min-width: 25rem;
+        min-width: 400px;
         flex: 1 0 0;
 
         color: #000;
@@ -53,10 +53,10 @@
 
     .social {
         display: flex;
-        min-width: 10.625rem;
+        min-width: 170px;
         justify-content: center;
         align-items: center;
-        gap: 1.5625rem;
+        gap: 25px;
     }
 
     img:hover {
@@ -70,12 +70,12 @@
 
     .contacts {
         display: flex;
-        min-width: 25rem;
+        min-width: 400px;
         padding-left: 0px;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
-        gap: 0.4375rem;
+        gap: 7px;
         flex: 1 0 0;
     }
 

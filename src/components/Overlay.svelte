@@ -5,7 +5,6 @@
 
     let localItem = {};
     let localCart = [];
-    let amount = 1;
 
     selectedItem.subscribe((item)=>{localItem = item})
     cart.subscribe((cart)=>{localCart = cart})

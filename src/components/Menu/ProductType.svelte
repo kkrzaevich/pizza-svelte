@@ -18,22 +18,22 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 0.625rem;
+        gap: 10px;
     }
 
     .inner {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 0.625rem;
+        border-radius: 10px;
     }
 
     .outer {
-        width: 7.5rem;
-        height: 7.5rem;
+        width: 120px;
+        height: 120px;
 
         display: block;
-        border-radius: 0.625rem;
+        border-radius: 10px;
         border: 2px solid var(--900, #000);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
@@ -71,8 +71,8 @@
         
     @media screen and (max-width: 699px) {
         .outer {
-            width: 5.625rem;
-            height: 5.625rem;
+            width: 90px;
+            height: 90px;
         }  
 
         p {

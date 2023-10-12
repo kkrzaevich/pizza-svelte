@@ -29,11 +29,11 @@
 <style>
     section {
         display: flex;
-        padding: 1.5625rem;
+        padding: 25px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 0.625rem;
+        border-radius: 10px;
         background: var(--200, #FFCDA8);
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
@@ -42,7 +42,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 1.5625rem;
+        gap: 25px;
     }
 
     @media screen and (max-width: 1119px) {
@@ -50,11 +50,11 @@
         
     @media screen and (max-width: 699px) {
         section {
-            padding: 0.625rem;
+            padding: 10px;
         }
 
         div {
-            gap: 0.9375rem;
+            gap: 15px;
         }
     }  
 </style>

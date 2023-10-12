@@ -23,7 +23,6 @@
             const index = localCart.findIndex(object => (item.heading === object.heading))
             localCart[index].amount++;
             item.amount = localCart[index].amount;
-            console.log("local cart ", localCart)
             cart.update((cart) => localCart)
         }
     }
@@ -33,7 +32,6 @@
             const index = localCart.findIndex(object => (item.heading === object.heading))
             localCart[index].amount--;
             item.amount = localCart[index].amount;
-            console.log("local cart ", localCart)
             cart.update((cart) => localCart)
         }
     }
@@ -117,7 +115,7 @@
         color: var(--900, #000);
         /* bigger-bold */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -128,7 +126,7 @@
         color: var(--900, #000);
         /* bigger-italic */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: italic;
         font-weight: 200;
         line-height: normal;
@@ -164,7 +162,7 @@
         text-align: center;
         /* bigger-bold */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -212,15 +210,15 @@
         }
 
         h1 {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
 
         p {
-            font-size: 16px;
+            font-size: 1rem;
         }
 
         .amount-text {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }  
 </style>

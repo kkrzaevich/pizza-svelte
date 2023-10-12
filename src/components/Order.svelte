@@ -1,7 +1,7 @@
 <script>
     import { fade } from 'svelte/transition';
     import { fly } from 'svelte/transition';
-    import { cart, user } from "./stores";
+    import { cart } from "./stores";
     import { thepage } from './stores';
 
     $: maxlength = 12;
@@ -46,7 +46,6 @@
         if (!empty) {
             thepage.update((val)=>{return nextPage});
         } else {
-            console.log("Заполните все поля")
             display = "block";
         }
 
@@ -136,7 +135,7 @@
         color: var(--900, #000);
         /* logo-main */
         font-family: Roboto;
-        font-size: 36px;
+        font-size: 2.25rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -146,7 +145,7 @@
         color: var(--900, #000);
         /* bigger-bold */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -228,7 +227,7 @@
         text-align: center;
         /* bigger-bold */
         font-family: Roboto;
-        font-size: 24px;
+        font-size: 1.5rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -255,7 +254,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -275,7 +274,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -295,7 +294,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 300;
         line-height: normal;
@@ -313,7 +312,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -337,7 +336,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -355,7 +354,7 @@
         color: var(--900, #000);
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -367,7 +366,7 @@
         color: var(--900, #000);
         /* medium-bold */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -377,7 +376,7 @@
         color: red;
         /* medium */
         font-family: Roboto;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -420,14 +419,14 @@
             color: var(--900, #000);
             /* bigger-bold */
             font-family: Roboto;
-            font-size: 24px;
+            font-size: 1.5rem;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
         }
 
         h2 {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     } 
 </style>

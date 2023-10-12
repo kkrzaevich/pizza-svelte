@@ -53,11 +53,11 @@
 
     section {
         display: inline-flex;
-        height: 15.0625rem;
-        min-width: 25.875rem;
-        max-width: 25.875rem;
+        height: 241px;
+        min-width: 414px;
+        max-width: 414px;
         align-items: center;
-        gap: 2rem;
+        gap: 32px;
         flex-shrink: 0;
     }
 
@@ -66,7 +66,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 16px;
         align-self: stretch;
     }
 
@@ -83,8 +83,8 @@
     }
 
     p {
-        width: 14.5rem;
-        height: 6.25rem;
+        width: 232px;
+        height: 100px;
         color: #000;
         /* small */
         font-family: "Roboto", sans-serif;
@@ -104,11 +104,11 @@
 
     button {
         display: flex;
-        padding: 0.625rem 0.9375rem;
+        padding: 10px 15px;
         justify-content: center;
         align-items: center;
-        gap: 0.625rem;
-        border-radius: 0.625rem;
+        gap: 10px;
+        border-radius: 10px;
         background: var(--200, #FFCDA8);
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.25);
     }
@@ -139,8 +139,8 @@
         
     @media screen and (max-width: 699px) {
         section {
-            min-width: 20rem;
-            max-width: 20rem;
+            min-width: 320px;
+            max-width: 320px;
             height: auto;
         }
 
