@@ -58,12 +58,14 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         align-items: center;
         border-radius: 3.75rem;
-        background: var(--100, #FFE7CE);
+        background: $fill1-clr;
 
         max-width: 700px;
         min-width: 620px;
@@ -71,8 +73,6 @@
         box-shadow: 0px 0px 27px 0px rgba(0, 0, 0, 0.25);
 
         transition: height 1s;
-
-
     }
 
     .picture {
@@ -88,7 +88,7 @@
         gap: 0.625rem;
 
         border-radius: 3.75rem;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
     }
 
     .img-container {
@@ -117,59 +117,39 @@
 
     h1 {
         align-self: stretch;
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: left;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
     .price {
         align-self: stretch;
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: justify;
         /* small-light */
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+        @include small-light($mobile: false);
     }
 
     .description {
         align-self: stretch;
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: justify;
         /* small */
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include small($mobile: false);
     }
 
     .ingredients {
-        color: var(--900, #000);
+        color: $outline-clr;
         /* small-italic */
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: italic;
-        font-weight: 200;
-        line-height: normal;
+        @include small-italic($mobile: false);
     }
 
     .ingredients-title {
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: justify;
         /* small-bold-italic */
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: italic;
-        font-weight: 400;
-        line-height: normal;
+        @include small-bold-italic($mobile: false);
     }
 
     .add {
@@ -186,7 +166,7 @@
         align-items: center;
         gap: 0.625rem;
         border-radius: 0.625rem;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.25);
 
         transition-property: filter, background-color;
@@ -194,34 +174,28 @@
     }
 
     .add-button:hover {
-        background-color: var(--400, #E4A5FF);
+        background-color: $fill3-clr;
         filter: drop-shadow(0px 6px 12px rgba(126, 126, 126, 0.5));
     }
 
     .add-text {
-        color: #000;
+        color: $outline-clr;
         text-align: center;
 
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include small-bold($mobile: false);
     }
 
-    button .amount-text:hover {
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
+    button { 
+        .amount-text:hover {
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
+        }
     }
 
     .amount-text {
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: center;
         /* small-bold */
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include small-bold($mobile: false);
 
         transition-property: text-shadow;
         transition-duration: 0.35s;
@@ -234,7 +208,7 @@
         align-items: center;
         gap: 0.625rem;
         border-radius: 0.625rem;
-        background: #FFF;
+        background: $bg-clr;
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.05) inset;
     }
 
@@ -255,18 +229,18 @@
         filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 1));
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
         
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             border-radius: 3.75rem;
-            background: var(--100, #FFE7CE);
+            background: $fill1-clr;
             min-width: 300px;
         }
 
@@ -275,7 +249,7 @@
             flex: 1 0 0;
             align-self: stretch;
             border-radius: 3.75rem;
-            background: var(--200, #FFCDA8);
+            background: $fill2-clr;
             width: unset;
         }
 

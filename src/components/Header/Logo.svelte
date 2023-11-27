@@ -12,7 +12,8 @@
 </section>
 
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
 
     section {
         display: flex;
@@ -25,7 +26,7 @@
     img {
         width: 76px;
         height: 69px;
-        fill: var(--200, #FFCDA8);
+        fill: $fill2-clr;
         stroke-width: 1px;
         stroke: #000;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -44,11 +45,7 @@
         color: #000;
 
         /* logo-main */
-        font-family: "Roboto", sans-serif;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     p {
@@ -57,17 +54,13 @@
         color: #000;
 
         /* bigger-subtext */
-        font-family: "Roboto", sans-serif;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+        @include bigger-subtext($mobile: false);
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     } 
 
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         img {
             width: 2.77175rem;
             height: 2.5rem;
@@ -78,11 +71,7 @@
         }
 
         h1 {
-            font-family: Roboto;
-            font-size: 1.5rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            @include logo-main($mobile: true);
         }
     }
 </style>

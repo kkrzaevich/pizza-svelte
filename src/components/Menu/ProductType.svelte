@@ -12,7 +12,9 @@
 
 </a>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     a {
         display: inline-flex;
         flex-direction: column;
@@ -34,49 +36,57 @@
 
         display: block;
         border-radius: 10px;
-        border: 2px solid var(--900, #000);
+        border: 2px solid $outline-clr;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
     p {
         color: #000;
         /* bigger */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include bigger($mobile: false);
     }
 
-    a > .outer > .inner {
-        transition-property: background-color;
-        transition-duration: 0.35s;        
+    a { 
+        .outer { 
+            .inner {
+                transition-property: background-color;
+                transition-duration: 0.35s;       
+            }
+        } 
     }
 
-    a p {
-        transition-property: font-weight;
-        transition-duration: 0.35s;      
+    a { 
+        p {
+            transition-property: font-weight;
+            transition-duration: 0.35s;  
+        }    
     }
 
-    a:hover > .outer > .inner {
-        background-color: rgba(0, 0, 0, 0); 
+    a:hover { 
+        .outer { 
+            .inner {
+                background-color: rgba(0, 0, 0, 0); 
+            } 
+        }
     }
 
-    a:hover p {
-        font-weight: 700;
+    a:hover { 
+        p {
+            font-weight: 700;
+        }
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         .outer {
             width: 90px;
             height: 90px;
         }  
 
         p {
-            font-size: 1.25rem;
+            @include bigger($mobile: true);
         }
     }
 </style>

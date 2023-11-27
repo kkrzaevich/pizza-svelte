@@ -26,7 +26,9 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     section {
         display: flex;
         padding: 25px;
@@ -34,7 +36,7 @@
         justify-content: center;
         align-items: center;
         border-radius: 10px;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
@@ -45,10 +47,10 @@
         gap: 25px;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             padding: 10px;
         }

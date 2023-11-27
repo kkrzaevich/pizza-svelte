@@ -1,0 +1,164 @@
+$bg-clr: #ffffff;
+$fill1-clr: #FFE7CE;
+$fill2-clr: #FFCDA8;
+$fill3-clr: #E4A5FF;
+$outline-clr: #000;
+
+$break-tablet: 1119px;
+$break-mobile: 699px;
+
+@mixin logo-main($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1.5rem;
+    } @else {
+        font-size: 2.25rem;
+    }
+}
+
+@mixin medium($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1.25rem;
+    }
+}
+
+@mixin medium-bold($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1.25rem;
+    }
+}
+
+@mixin bigger($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1.25rem;
+    } @else {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin bigger-bold($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1.25rem;
+    } @else {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin bigger-italic($mobile: true) {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 200;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin bigger-subtext($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1.5rem;
+    }
+}
+
+@mixin small($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1rem;
+    }
+}
+
+@mixin small-light($mobile: true) {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1rem;
+    }
+}
+
+@mixin small-italic($mobile: true) {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 200;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1rem;
+    }
+}
+
+@mixin small-bold($mobile: true) {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1rem;
+    }
+}
+
+@mixin small-bold-italic($mobile: true) {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+
+    @if $mobile {
+        font-size: 1rem;
+    } @else {
+        font-size: 1rem;
+    }
+}

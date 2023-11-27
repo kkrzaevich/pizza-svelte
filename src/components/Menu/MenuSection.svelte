@@ -15,7 +15,9 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -27,11 +29,7 @@
     h1 {
         color: #000;
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     div {
@@ -43,16 +41,16 @@
         flex-wrap: wrap;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             gap: 45px;
         }
 
         h1 {
-            font-size: 1.5rem;
+            @include small-bold($mobile: true);
         }
 
         div {

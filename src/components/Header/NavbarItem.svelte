@@ -28,15 +28,13 @@
     <button on:click={setPage}><p>{page.name}</p></button>
 {/if}
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     p {
         color: #000;
         /* bigger */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include bigger($mobile: false);
     }
 
     .selected {
@@ -57,10 +55,10 @@
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.20);
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
     }  
 </style>
 

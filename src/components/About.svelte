@@ -16,13 +16,15 @@
             <br />
             <p>Если вы ищете место, где можно насладиться вкусной пиццей в Экибазтузе, загляните к нам в пиццерию. Мы уверены, что наша пицца оправдает ваши ожидания и станет вашим любимым местом для обеда или ужина.</p>    
         </div>
-         <div class="images">
+        <div class="images">
             <img src="/about1.jpg" alt="some photo of trattoria">
             <img src="/about2.jpg" alt="some photo of trattoria">
         </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -36,22 +38,14 @@
         height: 33px;
         color: #000;
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     p {
         align-self: stretch;
         color: #000;
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
     }
 
     .images {
@@ -70,21 +64,21 @@
         object-position: 50% 80%;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             gap: 45px;
         }
 
         h1 {
-            font-size: 1.5rem;
+            @include logo-main($mobile: true);
         }
 
         p {
-            font-size: 1rem;
+            @include medium($mobile: true);
         }
     }  
 

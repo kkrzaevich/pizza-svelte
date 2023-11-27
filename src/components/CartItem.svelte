@@ -80,7 +80,9 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     .desktop {
         display: flex;
         padding: 25px;
@@ -112,24 +114,16 @@
 
     h1 {
         align-self: stretch;
-        color: var(--900, #000);
+        color: $outline-clr;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
     p {
         align-self: stretch;
-        color: var(--900, #000);
+        color: $outline-clr;
         /* bigger-italic */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: italic;
-        font-weight: 200;
-        line-height: normal;
+        @include bigger-italic($mobile: false);
     }
 
     .delete {
@@ -158,25 +152,21 @@
     }
 
     .amount-text {
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: center;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
     .mobile {
         display: none;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         .desktop {
             display: none;
         }
@@ -210,7 +200,7 @@
         }
 
         h1 {
-            font-size: 1.25rem;
+            @include bigger-bold($mobile: true);
         }
 
         p {
@@ -218,7 +208,7 @@
         }
 
         .amount-text {
-            font-size: 1.25rem;
+            @include bigger-bold($mobile: true);
         }
     }  
 </style>

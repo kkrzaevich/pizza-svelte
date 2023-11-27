@@ -122,7 +122,9 @@
     <p class="error-text" style="display: {display}" in:fade out:fade>Заполните все поля</p>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -132,23 +134,15 @@
     }
 
     h1 {
-        color: var(--900, #000);
+        color: $outline-clr;
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     h2 {
-        color: var(--900, #000);
+        color: $outline-clr;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
     .main-content {
@@ -175,7 +169,7 @@
         align-self: stretch;
         border-radius: 20px;
         border: 1px solid rgba(0, 0, 0, 0.20);
-        background: var(--100, #FFE7CE);
+        background: $fill1-clr;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
@@ -192,7 +186,7 @@
         align-self: stretch;
         border-radius: 20px;
         border: 1px solid rgba(0, 0, 0, 0.20);
-        background: #FFF;
+        background: $bg-clr;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
@@ -206,7 +200,7 @@
         align-self: stretch;
         border-radius: 20px;
         border: 1px solid rgba(0, 0, 0, 0.20);
-        background: #FFF;
+        background: $bg-clr;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     }
 
@@ -218,19 +212,21 @@
         gap: 10px;
         align-self: stretch;
         border-radius: 10px;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.25);
     }
 
-    .order-button > p {
-        color: var(--900, #000);
-        text-align: center;
-        /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+    .order-button { 
+        p {
+            color: $outline-clr;
+            text-align: center;
+            /* bigger-bold */
+            font-family: Roboto;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
     }
 
     .customer-container {
@@ -248,59 +244,50 @@
         align-self: stretch;
     }
 
-    .customer-line > p {
-        width: 100px;
-        min-width: 100px;
-        color: var(--900, #000);
-        /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        padding-top: 0.5rem;
-    }
+    .customer-line {
+        p {
+            width: 100px;
+            min-width: 100px;
+            color: $outline-clr;
+            /* medium */
+            @include medium($mobile: false);
+        }
 
-    .customer-line > input {
-        height: 25px;
-        flex: 1 0 0;
-        border-radius: 10px;
-        border: none;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        box-sizing: content-box;
+        input {
+            height: 25px;
+            flex: 1 0 0;
+            border-radius: 10px;
+            border: none;
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            box-sizing: content-box;
 
-        color: var(--900, #000);
-        /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+            color: $outline-clr;
+            /* medium */
+            @include medium($mobile: false);
+            font-weight: 300;
 
-        outline: none;
-    }
+            outline: none;
+        }
 
-    .customer-line > textarea {
-        width: 100%;
-        box-sizing: content-box;
-        border: none;
-        border-radius: 10px;
-        background: #FFF;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        textarea {
+            width: 100%;
+            box-sizing: content-box;
+            border: none;
+            border-radius: 10px;
+            background: #FFF;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
-        color: var(--900, #000);
-        /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
+            color: $outline-clr;
+            /* medium */
+            @include medium($mobile: false);
+            font-weight: 300;
 
-        outline: none;
-    }
+            outline: none;
+        }
+    } 
 
     .pay-radio {
         display: flex;
@@ -309,13 +296,9 @@
     }
 
     .pay-button {
-        color: var(--900, #000);
+        color: $outline-clr;
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
 
         appearance: none;
 
@@ -329,17 +312,13 @@
     }
 
     .pay-button:checked {
-        border: 6px solid var(--900, #000);
+        border: 6px solid $outline-clr;
     }
 
     .pay-label {
-        color: var(--900, #000);
+        color: $outline-clr;
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
     }
 
     .cost-line, .total-line {
@@ -350,40 +329,32 @@
         min-width: 225px;
     }
 
-    .cost-line > p {
-        color: var(--900, #000);
-        /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .cost-line { 
+        p {
+            color: $outline-clr;
+            /* medium */
+            @include medium($mobile: false);
 
-        max-width: 150px;
+            max-width: 150px;
+        }
     }
 
-    .total-line > p {
-        color: var(--900, #000);
-        /* medium-bold */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+    .total-line { 
+        p {
+            color: $outline-clr;
+            /* medium-bold */
+            @include medium-bold($mobile: false);
+        }
     }
 
     .error-text {
         color: red;
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
         display: none;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
         .main-cost-desktop {
             display: none;
         }
@@ -397,7 +368,7 @@
             align-self: stretch;
             border-radius: 20px;
             border: 1px solid rgba(0, 0, 0, 0.20);
-            background: var(--100, #FFE7CE);
+            background: $fill1-clr;
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
         }
 
@@ -409,24 +380,26 @@
             align-self: stretch;
         }
 
-        .cost-line > p {
-            max-width: unset;
+        .cost-line { 
+            p {
+                max-width: unset;
+            }
         }
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         h1 {
-            color: var(--900, #000);
+            color: $outline-clr;
             /* bigger-bold */
-            font-family: Roboto;
-            font-size: 1.5rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            @include bigger-bold($mobile: false)
         }
 
         h2 {
-            font-size: 1.25rem;
+            @include bigger-bold($mobile: true)
+        }
+
+        * {
+            min-width: none;
         }
     } 
 </style>

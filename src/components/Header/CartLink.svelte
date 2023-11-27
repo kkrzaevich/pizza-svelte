@@ -27,15 +27,17 @@
 
 <button class="cart" on:click={setPage}><img src={src1} alt={alt1}></button>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     img:hover {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.20));
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         .cart {
             width: 50px;
             height: 50px;

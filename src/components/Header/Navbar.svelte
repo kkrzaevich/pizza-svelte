@@ -63,7 +63,9 @@
     {/if}
 </section>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     img:hover {
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.20));
     }
@@ -87,7 +89,7 @@
         gap: 32px;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
         .hamburger {
             width: 57.6px;
@@ -136,7 +138,7 @@
 
     }
 
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
 
         .hamburger {
             width: 40px;

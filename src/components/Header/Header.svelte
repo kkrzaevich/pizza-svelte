@@ -10,7 +10,9 @@
     <Navbar/>
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+    
     div {
         display: grid;
         grid-auto-flow: column;
@@ -22,9 +24,9 @@
         width: 100%;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
     }  
 </style>

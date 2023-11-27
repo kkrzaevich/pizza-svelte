@@ -10,7 +10,9 @@
     <MenuMenu />
 </div>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     div {
         display: flex;
         flex-direction: column;
@@ -19,10 +21,10 @@
         align-self: stretch;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         div {
             gap: 45px;
         }

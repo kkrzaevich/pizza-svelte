@@ -16,13 +16,15 @@
             <p>Тел. 0118 999 881 999 119 725 3</p>
             <p>Email. moapizza@yahoo.kz</p>    
         </div>
-         <div class="map">
+        <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4532.357757375187!2d75.3193220317402!3d51.72781249298126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42582b0fa1138419%3A0xeeff40329954178!2sTd%20Sary-Arka!5e0!3m2!1sen!2sru!4v1691690023596!5m2!1sen!2sru" width="600" height="450" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -36,22 +38,14 @@
         height: 33px;
         color: #000;
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     p {
         align-self: stretch;
         color: #000;
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
     }
 
     .map {
@@ -69,21 +63,17 @@
         align-self: stretch;        
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             gap: 45px;
         }
 
         h1 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            font-size: 1.25rem;
+            @include logo-main($mobile: true);
         }
 
         .map {

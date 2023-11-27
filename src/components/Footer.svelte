@@ -16,7 +16,9 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     hr {
         border: 0.5px solid #E4A5FF;
         width: 100%;
@@ -44,11 +46,7 @@
 
         color: #000;
         /* bigger */
-        font-family: "Roboto", sans-serif;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include bigger($mobile: false);
     }
 
     .social {
@@ -79,34 +77,30 @@
         flex: 1 0 0;
     }
 
-    .contacts > h1 {
-        color: #000;
-        /* medium-bold */
-        font-family: "Roboto", sans-serif;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+    .contacts { 
+        h1 {
+            color: #000;
+            /* medium-bold */
+            @include medium-bold($mobile: false);
+        }
     }
 
-    .contacts > p {
-        color: #000;
-        /* medium */
-        font-family: "Roboto", sans-serif;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+    .contacts { 
+        p {
+            color: #000;
+            /* medium */
+            @include medium($mobile: false);
+        }
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
         .contacts {
             padding-left: unset;
             align-items: flex-start;
         }
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         .contacts {
             min-width: unset;
             width: 100%;

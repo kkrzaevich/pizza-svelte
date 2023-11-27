@@ -8,7 +8,9 @@
         <img src="/workInProgress.PNG" alt="sad dog">
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -20,11 +22,7 @@
     h1 {
         color: #000;
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     img {
@@ -32,17 +30,17 @@
         filter: grayscale(100%);
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             gap: 2.8125rem;
         }
 
         h1 {
-            font-size: 1.5rem;
+            @include logo-main($mobile: true);
         }
     }  
 

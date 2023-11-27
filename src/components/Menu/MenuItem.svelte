@@ -36,7 +36,9 @@
     </div>
 </section>
 
-<style>
+<style lang="scss">
+    @use '../../styles' as *;
+
     .img-container {
         min-width: 150px;
         width: 150px;
@@ -75,11 +77,7 @@
 
         color: #000;
         /* medium-bold */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include medium-bold($mobile: false);
     }
 
     p {
@@ -87,15 +85,10 @@
         height: 100px;
         color: #000;
         /* small */
-        font-family: "Roboto", sans-serif;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include small($mobile: false);
     }
 
     .price {
-        /* font-style: italic; */
         font-weight: 300;
         font-style: italic;
         height: unset;
@@ -109,7 +102,7 @@
         align-items: center;
         gap: 10px;
         border-radius: 10px;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.25);
     }
 
@@ -117,11 +110,7 @@
         color: #000;
         text-align: center;
 
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include small-bold($mobile: false);
     }
 
     button {
@@ -130,14 +119,14 @@
     }
     
     button:hover {
-        background-color: var(--400, #E4A5FF);
+        background-color: $fill3-clr;
         filter: drop-shadow(0px 12px 25px rgba(126, 126, 126, 0.5));
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         section {
             min-width: 320px;
             max-width: 320px;

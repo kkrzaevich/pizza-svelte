@@ -46,7 +46,9 @@
         {/if}
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     section {
         display: flex;
         flex-direction: column;
@@ -61,22 +63,14 @@
         flex-shrink: 0;
         color: var(--900, #000);
         /* logo-main */
-        font-family: Roboto;
-        font-size: 2.25rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include logo-main($mobile: false);
     }
 
     .empty-text {
         align-self: stretch;
         color: var(--900, #000);
         /* medium */
-        font-family: Roboto;
-        font-size: 1.25rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include medium($mobile: false);
     }
 
     .cart-items {
@@ -90,13 +84,9 @@
     .sum {
         width: 199px;
         height: 33px;
-        color: var(--900, #000);
+        color: $outline-clr;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
     button {
@@ -107,38 +97,34 @@
         gap: 10px;
         align-self: stretch;
         border-radius: 10px;
-        background: var(--200, #FFCDA8);
+        background: $fill2-clr;
         box-shadow: 0px 5px 9px -1px rgba(0, 0, 0, 0.25);
     }
 
     span {
-        color: var(--900, #000);
+        color: $outline-clr;
         text-align: center;
         /* bigger-bold */
-        font-family: Roboto;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
+        @include bigger-bold($mobile: false);
     }
 
 
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
 
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         h1 {
-            font-size: 1.5rem;
+            @include logo-main($mobile: true);
         }
 
-        p {
-            font-size: 1rem;
+        .empty-text {
+            @include medium($mobile: true);
         }
 
         span, .sum {
-            font-size: 1.25rem;
+            @include bigger-bold($mobile: true);
         }
 
         section {

@@ -70,7 +70,9 @@
     {/if}
 </section>
 
-<style>
+<style lang="scss">
+    @use '../styles' as *;
+
     .disabled {
         height: 100%;
         overflow-y: hidden;
@@ -93,7 +95,7 @@
         flex: 1 0 0;
     }
 
-    @media screen and (max-width: 1119px) {
+    @media screen and (max-width: $break-tablet) {
         .overlay {
             position: fixed;
             top: 50vh;
@@ -103,7 +105,7 @@
         }
     }
         
-    @media screen and (max-width: 699px) {
+    @media screen and (max-width: $break-mobile) {
         .page {
             min-width: 320px;
             gap: 45px;
